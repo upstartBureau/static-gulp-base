@@ -2,9 +2,10 @@ const gulp = require('gulp')
 const browserSync = require('browser-sync').create()
 const sass = require('gulp-sass')
 
-gulp.task('serve', ['sass'], function() {
+gulp.task('serve', ['sass', 'html'], function() {
   browserSync.init({
-    server: './dist'
+    server: './dist',
+    port:1337
   })
   gulp.watch('src/**', ['html'])
   gulp.watch('src/sass/*.scss', ['sass'])
